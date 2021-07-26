@@ -75,6 +75,16 @@ def puntaje_credito(experiencia,deuda, ingreso):
     puntaje_general = experiencia + deuda + ingreso
     return puntaje_general
 
+def resultado(a):
+    if a>=700 and a < 1000:
+        resultado = "Excelente puntaje" 
+    elif a>=500 and a < 700:
+        resultado = "Está empesando a aumentar su riesgo crediticio. Se le recomienda Plan Perfil de Riesgo Medio"
+    elif a < 500:
+        resultado = "Debe emprender acciones inmediatas.  Se le recomienda Plan Perfil de Riesgo Alto"
+    return resultado
+    
+
 ## Ejemplo
 
 experiencia = experiencia_crediticia(5)
@@ -82,4 +92,9 @@ deuda = deudas_totales(3)
 ingreso = ingresos(0.4)
 
 puntaje_general = puntaje_credito(experiencia,deuda, ingreso)
-print("Puntaje del ejemplo", puntaje_general)
+
+resultado_calificacion = resultado(puntaje_general)
+print("La apliación encontro:",resultado_calificacion)
+
+
+
